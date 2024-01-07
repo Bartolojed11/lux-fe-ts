@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  lux-app:
+    container_name: lux-app
+    build:
+      context: ../../
+      dockerfile: docker/staging/Dockerfile
+    ports:
+      - ${NEXT_PUBLIC_APP_PORT}:3000
+    env_file:
+      - ./../../.env
